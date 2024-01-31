@@ -1,7 +1,8 @@
+import SignupPage from "../components/template/SignupPage"
 
 function Signup() {
   return (
-    <div>Signup</div>
+    <SignupPage/>
   )
 }
 

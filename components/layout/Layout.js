@@ -14,12 +14,12 @@ function Layout({ children }) {
     <div className="container">
       <header>
         <p>Botostart Todo App</p>
-        {status === "authenticated" ? (
+        
           <button onClick={logOutHandler}>
             Logout
             <FiLogOut />
           </button>
-        ) : null}
+        
       </header>
       <div className="container--main">
         <aside>
