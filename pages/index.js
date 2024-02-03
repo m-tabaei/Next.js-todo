@@ -1,7 +1,8 @@
 import { getSession } from "next-auth/react";
+import HomePage from "../components/template/HomePage";
 
 export default function Home() {
-  return <div>todo</div>;
+  return <HomePage/>;
 }
 
 export async function getServerSideProps({ req }) {
