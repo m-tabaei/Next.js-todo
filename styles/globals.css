@@ -190,13 +190,25 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
-
+.buttonupdate{
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer
+}
 .profile-form {
   padding: 20px;
 }
 
 .profile-form__input {
   margin-top: 20px;
+}
+.profile-form__input__update{
+  display: flex;
+  margin-bottom: 10px;
+  padding: 18px;
+  font-size: 16px;
 }
 
 .profile-form__input div {

@@ -28,7 +28,7 @@ async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-    const { title, status } = req.body;
+    const { title, status, sub } = req.body;
 
     if (!title || !status) {
       return res
@@ -36,7 +36,7 @@ async function handler(req, res) {
         .json({ status: "failed", message: "Invaild data!" });
     }
 
-    user.todos.push({ title, status });
+    user.todos.push({ title, status, sub });
     user.save();
 
     res.status(201).json({ status: "success", message: "Todo created!" });

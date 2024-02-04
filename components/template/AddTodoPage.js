@@ -11,17 +11,19 @@ import "react-toastify/dist/ReactToastify.css";
 function AddTodoPage() {
   const [title, setTitle] = useState("");
   const [status, setStatus] = useState("todo");
+  const [sub, setSub]= useState("")
 
   const addHandler = async () => {
     const res = await fetch("/api/todos", {
       method: "POST",
-      body: JSON.stringify({ title, status }),
+      body: JSON.stringify({ title, status, sub }),
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
     if (data.status === "success") {
       setTitle("");
       setStatus("todo");
+      setSub("")
       toast.success("Todo added!");
     }
   };
@@ -40,6 +42,14 @@ function AddTodoPage() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+          />
+       
+            <label htmlFor="sub">sub:</label>
+          <input
+            id="sub"
+            type="text"
+            value={sub}
+            onChange={(e) => setSub(e.target.value)}
           />
         </div>
         <div className="add-form__input--second">

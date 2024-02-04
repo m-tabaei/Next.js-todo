@@ -6,6 +6,7 @@ import { verifyPassword } from "../../../utils/auth";
 import connectDB from "../../../utils/connectDB";
 
 const authOptions = {
+  secret: process.env.SECRET_KEY,
   session: { strategy: "jwt" },
   providers: [
     CredentialsProvider({

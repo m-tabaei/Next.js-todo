@@ -41,9 +41,14 @@ async function handler(req, res) {
     user.name = name;
     user.lastName = lastName;
     user.save();
+    const updatedUser = await User.findOne({ email: session.user.email });
     res.status(200).json({
       status: "success",
-      data: { name, lastName, email: session.user.email },
+      data: {
+        name: updatedUser.name,
+        lastName: updatedUser.lastName,
+        email: session.user.email,
+      },
     });
   } else if (req.method === "GET") {
     res.status(200).json({
